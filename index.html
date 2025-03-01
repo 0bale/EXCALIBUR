@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excalibur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('saber.jpg'); /* Arkaplan resmi */
+            background-size: cover; /* Resmi sayfaya sığdır */
+            background-position: center; /* Resmi ortala */
+            background-repeat: no-repeat; /* Resmi tekrar etme */
+            height: 100vh; /* Sayfanın tamamını kapla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Yazı rengi */
+        }
+        video {
+            border: 5px solid #fff; /* Videoya çerçeve ekle (isteğe bağlı) */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Videoya gölge ekle (isteğe bağlı) */
+            position: relative; /* Videoyu konumlandır */
+            z-index: 1; /* Videoyu logonun altında tut */
+        }
+        #discord-logo {
+            position: fixed; /* Logoyu sabitle */
+            bottom: -100px; /* Logoyu sayfanın dışına yerleştir (daha aşağıda başlasın) */
+            left: 50%; /* Logoyu yatayda ortala */
+            transform: translateX(-50%); /* Tam ortalamak için */
+            font-size: 40px; /* Logo boyutu */
+            color: #7289DA; /* Discord rengi */
+            cursor: pointer; /* Üzerine gelindiğinde el işareti çıksın */
+            transition: bottom 1s ease-in-out; /* Animasyon efekti */
+            z-index: 1000; /* Logoyu en üstte tut */
+        }
+        #discord-logo:hover {
+            color: #5865F2; /* Logoya tıklandığında renk değişimi */
+        }
+        #hidden-text {
+            display: none; /* Yazıyı başlangıçta gizle */
+            position: fixed;
+            bottom: 20px; /* Sayfanın altından 20px boşluk */
+            left: 50%; /* Sayfanın ortasına yerleştir */
+            transform: translateX(-50%); /* Tam ortalamak için */
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7); /* Arkaplan rengi */
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000; /* Yazıyı en üstte tut */
+        }
+    </style>
+</head>
+<body>
+    <!-- Video -->
+    <video width="640" height="360" controls autoplay>
+        <source src="EXCALIBUR.mp4" type="video/mp4">
+        Tarayıcınız video formatını desteklemiyor.
+    </video>
+
+    <!-- Discord Logosu -->
+    <div id="discord-logo" onclick="showText()">
+        <i class="fa-brands fa-discord"></i>
+    </div>
+
+    <!-- Gizli Yazı -->
+    <div id="hidden-text">
+        top5animebetrayals
+    </div>
+
+    <script>
+        function showText() {
+            // Discord logosunu yukarı çıkar (videonun altına)
+            document.getElementById('discord-logo').style.bottom = '20px';
+
+            // Yazıyı göster
+            document.getElementById('hidden-text').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
