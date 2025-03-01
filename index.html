@@ -14,12 +14,21 @@
             background-repeat: no-repeat; /* Resmi tekrar etme */
             height: 100vh; /* Sayfanın tamamını kapla */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         video {
             border: none; /* Çerçeveyi tamamen kaldır */
             box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Daha belirgin sarı ışık efekti */
+        }
+        .discord-logo {
+            margin-top: 15px; /* Videonun hemen altında biraz boşluk bırak */
+        }
+        .discord-logo img {
+            width: 50px;
+            height: 50px;
+            filter: invert(87%) sepia(34%) saturate(517%) hue-rotate(359deg) brightness(95%) contrast(87%); /* Sarı renk efekti */
         }
     </style>
 </head>
@@ -28,5 +37,10 @@
         <source src="EXCALIBUR.mp4" type="video/mp4">
         Tarayıcınız video formatını desteklemiyor.
     </video>
+    <div class="discord-logo">
+        <a href="https://discord.com" target="_blank">
+            <img src="discord-logo.png" alt="Discord">
+        </a>
+    </div>
 </body>
 </html>
