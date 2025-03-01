@@ -58,4 +58,22 @@
 
     <!-- Discord Logosu -->
     <div id="discord-logo" onclick="showText()">
-        <i class
+        <i class="fa-brands fa-discord"></i>
+    </div>
+
+    <!-- Gizli Yazı -->
+    <div id="hidden-text">
+        top5animebetrayals
+    </div>
+
+    <script>
+        function showText() {
+            // Discord logosunu yukarı çıkar
+            document.getElementById('discord-logo').style.bottom = '20px';
+
+            // Yazıyı göster
+            document.getElementById('hidden-text').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
