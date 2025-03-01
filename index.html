@@ -27,40 +27,43 @@
         }
         @keyframes rotateLight {
             0% {
-                transform: rotate(0deg);
+                transform: rotate(0deg) translateX(150px) rotate(0deg); /* Işıkları daha geniş bir yörüngede döndür */
             }
             100% {
-                transform: rotate(360deg);
+                transform: rotate(360deg) translateX(150px) rotate(-360deg); /* Işıkları daha geniş bir yörüngede döndür */
             }
         }
         .light {
             position: absolute;
-            width: 20px; /* Işıkların boyutunu artır */
-            height: 20px; /* Işıkların boyutunu artır */
+            width: 30px; /* Işıkların boyutunu artır */
+            height: 30px; /* Işıkların boyutunu artır */
             background-color: #FFD700; /* Sarı renk */
             border-radius: 50%;
-            box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700; /* Daha belirgin ışık efekti */
-            animation: rotateLight 3s linear infinite; /* Daha hızlı animasyon */
+            box-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700, 0 0 90px #FFD700; /* Daha belirgin ve parlak ışık efekti */
+            animation: rotateLight 4s linear infinite; /* Daha yavaş ve belirgin animasyon */
         }
         .light:nth-child(1) {
-            top: -50px; /* Işıkları daha uzağa yerleştir */
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
         }
         .light:nth-child(2) {
             top: 50%;
-            left: -50px; /* Işıkları daha uzağa yerleştir */
-            transform: translateY(-50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -1s; /* İkinci ışığı geciktir */
         }
         .light:nth-child(3) {
             top: 50%;
-            right: -50px; /* Işıkları daha uzağa yerleştir */
-            transform: translateY(-50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -2s; /* Üçüncü ışığı geciktir */
         }
         .light:nth-child(4) {
-            bottom: -50px; /* Işıkları daha uzağa yerleştir */
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
+            animation-delay: -3s; /* Dördüncü ışığı geciktir */
         }
     </style>
 </head>
