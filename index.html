@@ -16,17 +16,65 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative; /* Işıklar için konumlandırma */
+            overflow: hidden; /* Taşan içeriği gizle */
         }
         video {
             border: none; /* Çerçeveyi tamamen kaldır */
-            box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Daha belirgin sarı ışık efekti */
+            box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Sarı ışık efekti */
+            position: relative; /* Videoyu konumlandır */
+            z-index: 1; /* Videoyu ışıkların üstünde tut */
+        }
+        @keyframes rotateLight {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .light {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFD700; /* Sarı renk */
+            border-radius: 50%;
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; /* Işık efekti */
+            animation: rotateLight 5s linear infinite; /* Dönen animasyon */
+        }
+        .light:nth-child(1) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .light:nth-child(2) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .light:nth-child(3) {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        .light:nth-child(4) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
+    <!-- Video -->
     <video width="640" height="360" controls autoplay>
         <source src="EXCALIBUR.mp4" type="video/mp4">
         Tarayıcınız video formatını desteklemiyor.
     </video>
+
+    <!-- Işıklar -->
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
 </body>
 </html>
