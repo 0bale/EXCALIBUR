@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excalibur</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('saber.jpg'); /* Arkaplan resmi */
+            background-size: cover; /* Resmi sayfaya sığdır */
+            background-position: center; /* Resmi ortala */
+            background-repeat: no-repeat; /* Resmi tekrar etme */
+            height: 100vh; /* Sayfanın tamamını kapla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            border: 5px solid #fff; /* Videoya çerçeve ekle (isteğe bağlı) */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Videoya gölge ekle (isteğe bağlı) */
+        }
+    </style>
 </head>
 <body>
     <video width="640" height="360" controls autoplay>
