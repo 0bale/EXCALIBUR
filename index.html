@@ -4,25 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excalibur</title>
-    <!-- Favicon Kodları -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Font Awesome -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -41,16 +23,19 @@
         video {
             border: 5px solid #fff; /* Videoya çerçeve ekle (isteğe bağlı) */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Videoya gölge ekle (isteğe bağlı) */
+            position: relative; /* Videoyu konumlandır */
+            z-index: 1; /* Videoyu logonun altında tut */
         }
         #discord-logo {
             position: fixed; /* Logoyu sabitle */
-            bottom: -50px; /* Logoyu sayfanın dışına yerleştir */
+            bottom: -100px; /* Logoyu sayfanın dışına yerleştir (daha aşağıda başlasın) */
             left: 50%; /* Logoyu yatayda ortala */
             transform: translateX(-50%); /* Tam ortalamak için */
             font-size: 40px; /* Logo boyutu */
             color: #7289DA; /* Discord rengi */
             cursor: pointer; /* Üzerine gelindiğinde el işareti çıksın */
             transition: bottom 1s ease-in-out; /* Animasyon efekti */
+            z-index: 1000; /* Logoyu en üstte tut */
         }
         #discord-logo:hover {
             color: #5865F2; /* Logoya tıklandığında renk değişimi */
@@ -66,6 +51,7 @@
             background-color: rgba(0, 0, 0, 0.7); /* Arkaplan rengi */
             padding: 10px 20px;
             border-radius: 5px;
+            z-index: 1000; /* Yazıyı en üstte tut */
         }
     </style>
 </head>
@@ -87,7 +73,7 @@
 
     <script>
         function showText() {
-            // Discord logosunu yukarı çıkar
+            // Discord logosunu yukarı çıkar (videonun altına)
             document.getElementById('discord-logo').style.bottom = '20px';
 
             // Yazıyı göster
