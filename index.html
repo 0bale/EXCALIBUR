@@ -26,7 +26,8 @@
         #discord-logo {
             position: fixed; /* Logoyu sabitle */
             bottom: -50px; /* Logoyu sayfanın dışına yerleştir */
-            left: 20px; /* Sol taraftan 20px boşluk */
+            left: 50%; /* Logoyu yatayda ortala */
+            transform: translateX(-50%); /* Tam ortalamak için */
             font-size: 40px; /* Logo boyutu */
             color: #7289DA; /* Discord rengi */
             cursor: pointer; /* Üzerine gelindiğinde el işareti çıksın */
@@ -57,22 +58,4 @@
 
     <!-- Discord Logosu -->
     <div id="discord-logo" onclick="showText()">
-        <i class="fa-brands fa-discord"></i>
-    </div>
-
-    <!-- Gizli Yazı -->
-    <div id="hidden-text">
-        top5animebetrayals
-    </div>
-
-    <script>
-        function showText() {
-            // Discord logosunu yukarı çıkar
-            document.getElementById('discord-logo').style.bottom = '20px';
-
-            // Yazıyı göster
-            document.getElementById('hidden-text').style.display = 'block';
-        }
-    </script>
-</body>
-</html>
+        <i class
