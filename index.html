@@ -35,30 +35,30 @@
         }
         .light {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 20px; /* Işıkların boyutunu artır */
+            height: 20px; /* Işıkların boyutunu artır */
             background-color: #FFD700; /* Sarı renk */
             border-radius: 50%;
-            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; /* Işık efekti */
-            animation: rotateLight 5s linear infinite; /* Dönen animasyon */
+            box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700; /* Daha belirgin ışık efekti */
+            animation: rotateLight 3s linear infinite; /* Daha hızlı animasyon */
         }
         .light:nth-child(1) {
-            top: 0;
+            top: -50px; /* Işıkları daha uzağa yerleştir */
             left: 50%;
             transform: translateX(-50%);
         }
         .light:nth-child(2) {
             top: 50%;
-            left: 0;
+            left: -50px; /* Işıkları daha uzağa yerleştir */
             transform: translateY(-50%);
         }
         .light:nth-child(3) {
             top: 50%;
-            right: 0;
+            right: -50px; /* Işıkları daha uzağa yerleştir */
             transform: translateY(-50%);
         }
         .light:nth-child(4) {
-            bottom: 0;
+            bottom: -50px; /* Işıkları daha uzağa yerleştir */
             left: 50%;
             transform: translateX(-50%);
         }
