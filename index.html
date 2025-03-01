@@ -16,68 +16,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* Işıklar için konumlandırma */
-            overflow: hidden; /* Taşan içeriği gizle */
         }
         video {
             border: none; /* Çerçeveyi tamamen kaldır */
-            box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Sarı ışık efekti */
-            position: relative; /* Videoyu konumlandır */
-            z-index: 1; /* Videoyu ışıkların üstünde tut */
-        }
-        @keyframes rotateLight {
-            0% {
-                transform: rotate(0deg) translateX(150px) rotate(0deg); /* Işıkları daha geniş bir yörüngede döndür */
-            }
-            100% {
-                transform: rotate(360deg) translateX(150px) rotate(-360deg); /* Işıkları daha geniş bir yörüngede döndür */
-            }
-        }
-        .light {
-            position: absolute;
-            width: 30px; /* Işıkların boyutunu artır */
-            height: 30px; /* Işıkların boyutunu artır */
-            background-color: #FFD700; /* Sarı renk */
-            border-radius: 50%;
-            box-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700, 0 0 90px #FFD700; /* Daha belirgin ve parlak ışık efekti */
-            animation: rotateLight 4s linear infinite; /* Daha yavaş ve belirgin animasyon */
-        }
-        .light:nth-child(1) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .light:nth-child(2) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -1s; /* İkinci ışığı geciktir */
-        }
-        .light:nth-child(3) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -2s; /* Üçüncü ışığı geciktir */
-        }
-        .light:nth-child(4) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -3s; /* Dördüncü ışığı geciktir */
+            box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Daha belirgin sarı ışık efekti */
         }
     </style>
 </head>
 <body>
-    <!-- Video -->
     <video width="640" height="360" controls autoplay>
         <source src="EXCALIBUR.mp4" type="video/mp4">
         Tarayıcınız video formatını desteklemiyor.
     </video>
-
-    <!-- Işıklar -->
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
 </body>
 </html>
