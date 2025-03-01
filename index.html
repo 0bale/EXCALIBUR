@@ -18,9 +18,32 @@
             justify-content: center;
             align-items: center;
         }
+        .video-container {
+            position: relative;
+            display: inline-block;
+        }
         video {
             border: none; /* Çerçeveyi tamamen kaldır */
-            box-shadow: 0 0 40px rgba(255, 223, 0, 0.8); /* Daha belirgin sarı ışık efekti */
+            display: block;
+            width: 640px;
+            height: 360px;
+        }
+        .led-effect {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 660px;
+            height: 380px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px 5px rgba(255, 223, 0, 1);
+            animation: ledAnimation 2s infinite linear;
+        }
+        @keyframes ledAnimation {
+            0% { box-shadow: 0 0 20px 5px rgba(255, 223, 0, 1); }
+            25% { box-shadow: 0 0 25px 10px rgba(255, 183, 0, 0.8); }
+            50% { box-shadow: 0 0 30px 15px rgba(255, 223, 0, 1); }
+            75% { box-shadow: 0 0 25px 10px rgba(255, 183, 0, 0.8); }
+            100% { box-shadow: 0 0 20px 5px rgba(255, 223, 0, 1); }
         }
         .discord-logo {
             margin-top: 15px; /* Videonun hemen altında biraz boşluk bırak */
@@ -29,7 +52,7 @@
         .discord-logo img {
             width: 50px;
             height: 50px;
-            filter: invert(87%) sepia(34%) saturate(517%) hue-rotate(359deg) brightness(95%) contrast(87%); /* Sarı renk efekti */
+            filter: invert(87%) sepia(34%) saturate(517%) hue-rotate(359deg) brightness(95%) contrast(87%);
         }
         #top5anime {
             display: none;
@@ -44,14 +67,17 @@
     </style>
 </head>
 <body>
-    <video width="640" height="360" controls autoplay>
-        <source src="EXCALIBUR.mp4" type="video/mp4">
-        Tarayıcınız video formatını desteklemiyor.
-    </video>
+    <div class="video-container">
+        <div class="led-effect"></div>
+        <video width="640" height="360" controls autoplay>
+            <source src="EXCALIBUR.mp4" type="video/mp4">
+            Tarayıcınız video formatını desteklemiyor.
+        </video>
+    </div>
     <div class="discord-logo" onclick="showText()">
         <img src="discord-logo.png" alt="Discord">
     </div>
-    <div id="top5anime">top5animebetrayals</div>
+    <div id="top5anime">Top 5 Anime Betrayals</div>
 
     <script>
         function showText() {
