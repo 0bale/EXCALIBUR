@@ -9,21 +9,26 @@
             margin: 0;
             padding: 0;
             background-image: url('saber.jpg'); /* Arkaplan resmi */
-            background-size: cover; /* Resmi sayfaya sığdır */
-            background-position: center; /* Resmi ortala */
-            background-repeat: no-repeat; /* Resmi tekrar etme */
-            height: 100vh; /* Sayfanın tamamını kapla */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         .video-container {
             position: relative;
             display: inline-block;
         }
         video {
-            border: none; /* Çerçeveyi tamamen kaldır */
+            border: none;
             display: block;
             width: 640px;
             height: 360px;
@@ -46,7 +51,7 @@
             100% { box-shadow: 0 0 20px 5px rgba(255, 223, 0, 1); }
         }
         .discord-logo {
-            margin-top: 15px; /* Videonun hemen altında biraz boşluk bırak */
+            margin-top: 15px;
             cursor: pointer;
         }
         .discord-logo img {
@@ -64,29 +69,74 @@
             padding: 10px;
             border-radius: 5px;
         }
+        .bale-container {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.6s ease-in-out;
+        }
+        .bale-container img {
+            width: 250px;
+            height: auto;
+        }
+        .bale-container.flipped {
+            transform: rotateY(180deg);
+        }
+        .bale-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <div class="led-effect"></div>
-        <video width="640" height="360" controls autoplay>
-            <source src="EXCALIBUR.mp4" type="video/mp4">
-            Tarayıcınız video formatını desteklemiyor.
-        </video>
+    <div class="container">
+        <div class="video-container">
+            <div class="led-effect"></div>
+            <video width="640" height="360" controls autoplay>
+                <source src="EXCALIBUR.mp4" type="video/mp4">
+                Tarayıcınız video formatını desteklemiyor.
+            </video>
+        </div>
+        <div class="bale-container" onclick="flipBale()">
+            <img src="garethbale.png" alt="Gareth Bale">
+            <div class="bale-text" id="baleText">
+                Gareth Bale is a retired Welsh professional footballer, widely regarded as one of the best wingers of his generation. Born on July 16, 1989, in Cardiff, Wales, he gained fame for his incredible speed, dribbling, powerful left foot, and ability to score stunning goals from long range.<br><br>
+                <strong>Career Highlights:</strong><br>
+                • Southampton (2006–2007) – Started his professional career as a left-back.<br>
+                • Tottenham Hotspur (2007–2013, 2020–2021) – Developed into a world-class winger, winning the PFA Player of the Year award twice.<br>
+                • Real Madrid (2013–2022) – Won five UEFA Champions League titles and played a key role in major victories, including his famous bicycle kick goal in the 2018 UCL final against Liverpool.<br>
+                • Los Angeles FC (2022) – Brief stint in the MLS, where he won the MLS Cup before retiring in January 2023.<br>
+                • Wales National Team (2006–2022) – Led Wales to their first Euro 2016 semi-finals, captained the team in their first World Cup in 64 years (2022), and became Wales' all-time top scorer.<br><br>
+                Despite injuries affecting his later career, Bale remains an iconic figure in Welsh football history. After retiring, he has been involved in golf, a sport he's passionate about.
+            </div>
+        </div>
     </div>
+
     <div class="discord-logo" onclick="showText()">
         <img src="discord-logo.png" alt="Discord">
     </div>
-    <div id="top5anime">top5animebetrayals</div>
+    <div id="top5anime">Top 5 Anime Betrayals</div>
 
     <script>
         function showText() {
             var text = document.getElementById("top5anime");
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
+            text.style.display = text.style.display === "none" ? "block" : "none";
+        }
+
+        function flipBale() {
+            var bale = document.querySelector(".bale-container");
+            var text = document.getElementById("baleText");
+            bale.classList.toggle("flipped");
+            text.style.display = text.style.display === "none" ? "block" : "none";
         }
     </script>
 </body>
