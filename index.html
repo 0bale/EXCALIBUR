@@ -71,13 +71,13 @@
         }
         .bale-container {
             position: absolute;
-            right: 8%; /* Daha sağa kaydırıldı */
-            top: 20%; /* Biraz yukarı taşındı */
+            right: 12%; /* Daha sağa kaydırıldı */
+            top: 15%; /* Biraz yukarı taşındı */
             cursor: pointer;
             transition: transform 0.6s ease-in-out;
         }
         .bale-container img {
-            width: 250px;
+            width: 240px;
             height: auto;
         }
         .bale-container.flipped {
@@ -89,13 +89,14 @@
             top: 110%;
             left: 50%;
             transform: translateX(-50%);
-            width: 320px;
+            width: 350px; /* Daha geniş hale getirildi */
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 10px;
+            padding: 12px;
             border-radius: 5px;
             font-size: 14px;
             text-align: center;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
