@@ -17,7 +17,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            cursor: url('padoru.png'), auto; /* Özel mouse imleci */
+            cursor: auto; /* Varsayılan imleç */
         }
         .container {
             display: flex;
@@ -60,7 +60,7 @@
             height: 50px;
             filter: invert(87%) sepia(34%) saturate(517%) hue-rotate(359deg) brightness(95%) contrast(87%);
         }
-        #bale {
+        #top5anime {
             display: none;
             margin-top: 10px;
             font-size: 20px;
@@ -128,11 +128,11 @@
     <div class="discord-logo" onclick="showText()">
         <img src="discord-logo.png" alt="Discord">
     </div>
-    <div id="bale">.0bale</div>
+    <div id="top5anime">top5animebetrayals</div>
 
     <script>
         function showText() {
-            var text = document.getElementById("bale");
+            var text = document.getElementById("top5anime");
             text.style.display = text.style.display === "none" ? "block" : "none";
         }
 
