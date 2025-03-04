@@ -99,6 +99,72 @@
             text-align: center;
             overflow-wrap: break-word;
         }
+
+        /* Responsive Tasarım İçin Eklenen Stiller */
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            video {
+                width: 100%;
+                height: auto;
+                max-width: 400px;
+            }
+
+            .led-effect {
+                width: 100%;
+                height: auto;
+                max-width: 420px;
+                top: -5px;
+                left: -5px;
+            }
+
+            .bale-container {
+                position: static;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .bale-container img {
+                width: 180px;
+            }
+
+            .bale-text {
+                width: 90%;
+                font-size: 12px;
+                top: 100%;
+            }
+
+            .discord-logo {
+                margin-top: 10px;
+            }
+
+            .discord-logo img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            video {
+                max-width: 300px;
+            }
+
+            .led-effect {
+                max-width: 320px;
+            }
+
+            .bale-container img {
+                width: 150px;
+            }
+
+            .bale-text {
+                width: 100%;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
